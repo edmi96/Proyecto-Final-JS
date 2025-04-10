@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Los Mugiwaras</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/jpg" href="images/OnePiece_favicon.png">
+</head>
+
+<body>
+  <header>
+    <img class="onepiece-headerlogo" src="images/OnePiece_logo.webp" alt="One Piece logo">
+  </header>
+  <main>
+    <img id="luffy-jolly" class="jolly_roger" src="images/luffy/luffy_jollyroger.png" alt="Luffy Jolly Roger">
+    <img id="zorro-jolly" class="jolly_roger" src="images/zorro/zorro_jollyroger2.png" alt="Zorro Jolly Roger">
+    <img id="nami-jolly" class="jolly_roger" src="images/nami/nami_jollyroger.png" alt="Nami Jolly Roger">
+    <img id="usopp-jolly" class="jolly_roger" src="images/usopp/usopp_jollyroger.png" alt="Usopp Jolly Roger">
+    <img id="sanji-jolly" class="jolly_roger" src="images/sanji/sanji_jollyroger.png" alt="Sanji Jolly Roger">
+    <img id="chopper-jolly" class="jolly_roger" src="images/chopper/chopper_jollyroger.png" alt="Chopper Jolly Roger">
+    <img id="robin-jolly" class="jolly_roger" src="images/robin/robin_jollyroger.png" alt="Robin Jolly Roger">
+    <img id="franky-jolly" class="jolly_roger" src="images/franky/franky_jollyroger.png" alt="Franky Jolly Roger">
+    <img id="brook-jolly" class="jolly_roger" src="images/brook/brook_jollyroger.png" alt="Brook Jolly Roger">
+    <img id="jinbe-jolly" class="jolly_roger" src="images/jinbe/jinbe_jollyroger.png" alt="Jinbe Jolly Roger">
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Banda de los Sombreros de Paja - Edmi</p>
+  </footer>
+
+  <!--Menú emergente-->
+  <div id="modal" style="display: none;">
+    <div class="modal-content">
+      <!-- Header dinámico del modal -->
+      <header>
+        <h1 id="modal-title"></h1>
+      </header>
+
+      <!-- Botones de pestañas -->
+      <div class="tabs">
+        <button class="tab-button" data-tab="intro">Introducción</button>
+        <button class="tab-button" data-tab="powers">Habilidades y Poderes</button>
+        <button class="tab-button" data-tab="misc">Miscelánea</button>
+      </div>
+
+      <!-- Contenedor para el contenido dinámico de las pestañas -->
+      <div class="tab-content">
+        <!-- Aquí se insertará dinámicamente el contenido de cada pestaña -->
+      </div>
+
+      <!-- Botón para cerrar el modal -->
+      <button class="close-btn">X</button>
+    </div>
+  </div>
+
+  <script src="mugiwaras.js" type="module"></script>
+  <script src="scripts.js" type="module"></script>
+</body>
+
+</html>

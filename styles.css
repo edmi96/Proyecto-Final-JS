@@ -1,0 +1,592 @@
+/* Variables de colores para los personajes */
+:root {
+  /* Colores base */
+  --bg-body: #000000;
+  --bg-header: #000000;
+  --text-color: #ffffff;
+
+  /* Colores por personaje */
+  --luffy-color: #d72323;
+  --zorro-color: #2d8515;
+  --nami-color: #ff9500;
+  --usopp-color: #ffdd1c;
+  --sanji-color: #07579e;
+  --chopper-color: #ff69b4;
+  --robin-color: #6a287e;
+  --franky-color: #1eddff;
+  --brook-color: #f0f0f0;
+  --jinbe-color: #c28d2a;
+}
+
+/* Estilos generales */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-body);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.5s ease;
+}
+
+/* Header */
+header {
+  background-color: var(--bg-header);
+  padding: 20px 0;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  transition: background-color 0.5s ease;
+  margin-bottom: 0;
+  border: none;
+}
+
+.onepiece-headerlogo {
+  max-width: 600px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.onepiece-headerlogo:hover {
+  transform: scale(1.05);
+}
+
+/* Contenedor principal */
+main {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  padding: 30px;
+  width: 100%;
+  justify-items: center;
+  background-color: transparent;
+  margin-top: 0;
+  transition: none;
+}
+
+/* Estilo de las imágenes */
+.jolly_roger {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  filter: grayscale(30%) drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+/* Efectos hover y clases dinámicas */
+.jolly_roger:hover {
+  transform: scale(1.1) rotate(5deg);
+  filter: grayscale(0%) drop-shadow(0 0 15px var(--text-color));
+}
+
+body[class*="-active"] {
+  background-color: var(--text-color);
+}
+
+header[class*="-active"] {
+  background-color: var(--text-color);
+}
+
+/* Colores personalizados por personaje */
+body.luffy-active {
+  background-color: var(--luffy-color);
+}
+
+header.luffy-active {
+  background-color: var(--luffy-color);
+}
+
+body.zorro-active {
+  background-color: var(--zorro-color);
+}
+
+header.zorro-active {
+  background-color: var(--zorro-color);
+}
+
+body.nami-active {
+  background-color: var(--nami-color);
+}
+
+header.nami-active {
+  background-color: var(--nami-color);
+}
+
+body.usopp-active {
+  background-color: var(--usopp-color);
+}
+
+header.usopp-active {
+  background-color: var(--usopp-color);
+}
+
+body.sanji-active {
+  background-color: var(--sanji-color);
+}
+
+header.sanji-active {
+  background-color: var(--sanji-color);
+}
+
+body.chopper-active {
+  background-color: var(--chopper-color);
+}
+
+header.chopper-active {
+  background-color: var(--chopper-color);
+}
+
+body.robin-active {
+  background-color: var(--robin-color);
+}
+
+header.robin-active {
+  background-color: var(--robin-color);
+}
+
+body.franky-active {
+  background-color: var(--franky-color);
+}
+
+header.franky-active {
+  background-color: var(--franky-color);
+}
+
+body.brook-active {
+  background-color: var(--brook-color);
+}
+
+header.brook-active {
+  background-color: var(--brook-color);
+}
+
+body.jinbe-active {
+  background-color: var(--jinbe-color);
+}
+
+header.jinbe-active {
+  background-color: var(--jinbe-color);
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  color: #000000;
+  border: 5px solid transparent;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  max-height: 80vh;
+  overflow: hidden;
+}
+
+/* Header dentro del modal */
+.modal-content header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.modal-content header img {
+  order: -1;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.modal-content header h1, .modal-content header p {
+  font-size: 20px;
+  margin: 0;
+  text-align: center;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tab-button {
+  cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  background-color: #ffffff;
+  color: #000000;
+  margin: 0 5px;
+  transition: background 0.3s ease;
+}
+
+.tab-button.active {
+background-color: #ffdd1c;
+}
+
+/* Pestañas con desplazamiento */
+.tab {
+  display: none; 
+  max-height: 60vh;
+  overflow-y: auto;
+  overflow-x: auto;
+  padding: 10px;
+  text-align: left; 
+}
+
+.tab.active {
+  display: block;
+}
+
+/* Colores dinámicos por personaje */
+.modal-content.luffy-active {
+  border-color: var(--luffy-color);
+}
+
+.modal-content.zorro-active {
+  border-color: var(--zorro-color);
+}
+
+.modal-content.nami-active {
+  border-color: var(--nami-color);
+}
+
+.modal-content.usopp-active {
+  border-color: var(--usopp-color);
+}
+
+.modal-content.sanji-active {
+  border-color: var(--sanji-color);
+}
+
+.modal-content.chopper-active {
+  border-color: var(--chopper-color);
+}
+
+.modal-content.robin-active {
+  border-color: var(--robin-color);
+}
+
+.modal-content.franky-active {
+  border-color: var(--franky-color);
+}
+
+.modal-content.brook-active {
+  border-color: var(--brook-color);
+}
+
+.modal-content.jinbe-active {
+  border-color: var(--jinbe-color);
+}
+
+/* Estilo dinámico de las pestañas */
+.tab-button.luffy-active {
+  border-color: var(--luffy-color);
+}
+
+.tab-button.zorro-active {
+  border-color: var(--zorro-color);
+}
+
+.tab-button.nami-active {
+  border-color: var(--nami-color);
+}
+
+.tab-button.usopp-active {
+  border-color: var(--usopp-color);
+}
+
+.tab-button.sanji-active {
+  border-color: var(--sanji-color);
+}
+
+.tab-button.chopper-active {
+  border-color: var(--chopper-color);
+}
+
+.tab-button.robin-active {
+  border-color: var(--robin-color);
+}
+
+.tab-button.franky-active {
+  border-color: var(--franky-color);
+}
+
+.tab-button.brook-active {
+  border-color: var(--brook-color);
+}
+
+.tab-button.jinbe-active {
+  border-color: var(--jinbe-color);
+}
+
+#overlay-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Asegura que esté delante de todo */
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#overlay-menu h2 {
+  margin-top: 0;
+}
+
+#overlay-menu p {
+  font-size: 1.2em;
+}
+
+/* Modal completamente superpuesto */
+#modal.superposed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro translúcido */
+  z-index: 9999; /* Asegura que esté delante de todo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal.superposed .modal-content {
+  background-color: white;
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  overflow: auto;
+}
+
+#modal.superposed .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo general del menú */
+.modal-content {
+  border: 4px solid transparent; /* Borde por defecto */
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.modal-content p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.modal-content ul {
+  list-style: disc;
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.modal-content ul ul {
+  list-style: circle;
+  margin-left: 20px;
+}
+
+/* Luffy */
+.menu-luffy {
+  border-color: var(--luffy-color)
+}
+
+.tab-luffy {
+  background-color: var(--luffy-color);
+  color: white;
+}
+
+.tab-luffy.active {
+  background-color: #a11212;
+}
+
+/* Zoro */
+.menu-zorro {
+  border-color: var(--zorro-color)
+}
+
+.tab-zorro {
+  background-color: var(--zorro-color);
+  color: white;
+}
+
+.tab-zorro.active {
+  background-color: #1e5f0f;
+}
+
+/* Nami */
+.menu-nami {
+  border-color: var(--nami-color)
+}
+
+.tab-nami {
+  background-color: var(--nami-color);
+  color: white;
+}
+
+.tab-nami.active {
+  background-color: #cc7700;
+}
+/* Usopp */
+.menu-usopp {
+  border-color: var(--usopp-color);
+}
+
+.tab-usopp {
+  background-color: var(--usopp-color);
+  color: #000000;
+}
+
+.tab-usopp.active {
+  background-color: #ccae00;
+}
+/* Sanji */
+.menu-sanji {
+  border-color: var(--sanji-color)
+}
+
+.tab-sanji {
+  background-color: var(--sanji-color);
+  color: white;
+}
+
+.tab-sanji.active {
+  background-color: #053a6e;
+}
+/* Chopper */
+.menu-chopper {
+  border-color: var(--chopper-color)
+}
+
+.tab-chopper {
+  background-color: var(--chopper-color);
+  color: white;
+}
+
+.tab-chopper.active {
+  background-color: #cc5c9f;
+}
+/* Robin */
+.menu-robin {
+  border-color: var(--robin-color)
+}
+
+.tab-robin {
+  background-color: var(--robin-color);
+  color: white;
+}
+
+.tab-robin.active {
+  background-color: #4d205d;
+}
+/* Franky */
+.menu-franky {
+  border-color: var(--franky-color)
+}
+
+.tab-franky {
+  background-color: var(--franky-color);
+  color: white;
+}
+
+.tab-franky.active {
+  background-color: #179acb;
+}
+/* Brook */
+.menu-brook {
+  border-color: var(--brook-color)
+}
+
+.tab-brook {
+  background-color: var(--brook-color);
+  color: #000000;
+}
+
+.tab-brook.active {
+  background-color: #000000;
+  color: #ffffff;
+}
+/* Jinbe */
+.menu-jinbe {
+  border-color: var(--jinbe-color)
+}
+
+.tab-jinbe {
+  background-color: var(--jinbe-color);
+  color: white;
+}
+
+.tab-jinbe.active {
+  background-color: #9c6c1f;
+}
+
+
+
+footer {
+  text-align: center;
+  padding: 10px; 
+  font-size: 14px;
+  color: #ffffff; 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .onepiece-headerlogo {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 15px;
+  }
+}
